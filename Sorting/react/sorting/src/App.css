@@ -1,0 +1,54 @@
+body{
+
+  background-color: black;
+
+}
+.App {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  color:white;
+  justify-content: center;
+  
+}
+.cols-container{
+  position: relative;
+  height: 200px;
+  align-self: center;
+  place-items: bottom;
+  width: 1000px;
+  justify-content: center;
+}
+.col{
+  background-color: white;
+  width:1vw;
+  position: absolute;
+  bottom: 0;
+  align-self:last baseline;
+  color:black
+}
+.control-button{
+  margin-top: 4vh;
+  width:10vw;
+  padding: 0.5em 1em;
+  border-radius: 2vw;
+  align-self: center;
+  cursor:pointer;
+  background-color:deepskyblue;
+}
+.slider-container{
+  margin-top: 4vh;
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+}
+.slider{
+  width:30vw;
+  cursor: pointer;
+
+  
+}
+.slider-label{
+  align-self: center;
+  color :white
+}
