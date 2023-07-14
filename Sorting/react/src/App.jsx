@@ -35,7 +35,7 @@ function App() {
     setnumbers(newNumbers)
   }
 
-  // bubble array single swap 
+  // bubble sort single swap 
   const bubbleSortStep = ()=>{
     for(let i =0 ;i<numbers.length-1;i++){
       let currentCol = newNumbers[i]
@@ -46,7 +46,26 @@ function App() {
       }
     }
   }
-
+  // bubble sort one scan through the array
+  const bubbleSortScan = ()=>{
+    
+    let arrayIndex =0
+    const __bubbleSortScan = ()=>{
+      for(let i =arrayIndex ;i<numbers.length-1;i++){
+        let currentCol = newNumbers[i]
+        let adjCol = newNumbers[i+1]
+        if (adjCol < currentCol){
+          swapNumbers(i,i+1)
+          setTimeout(__bubbleSortScan,animationDuration * 1000)
+          arrayIndex= i
+          break
+        }
+      }
+    }
+    __bubbleSortScan()
+    
+  }
+  
   // start or stop the sorting animation
   const toggleSort = ()=>{
     
@@ -133,6 +152,7 @@ function App() {
           {cols}
         </div>
         <button id="start-button" className='control-button' onClick={toggleSort} > {timeoutFunction? "Stop":"Start"}</button>
+        <button id="Scan-button" className='control-button' onClick={bubbleSortScan} > One Scan</button>
         <div className='slider-container animation-slider-container'>
         <label>Animation Duration</label>
 
